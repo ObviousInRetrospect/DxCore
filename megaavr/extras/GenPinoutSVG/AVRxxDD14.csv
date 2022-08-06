@@ -1,4 +1,5 @@
 LABELS,DEFAULT,TYPE,GROUP,Name,Special,num,ADC0,AC0,DAC0,ZCD3,USARTn,SPI0,SPI0B,TWI0,TCA0,TCBn,TCD0,EVYS,CCL-LUT
+#use  https://github.com/ObviousInRetrospect/GenPinoutSVG - this csv uses that fork's multiple|boxes feature
 BORDER COLOR, grey
 BORDER WIDTH, 2
 BORDER OPACITY, 1
