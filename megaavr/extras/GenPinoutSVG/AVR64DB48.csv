@@ -65,16 +65,16 @@ TEXT, black,black,AVRxxDB48,NL
 
 
 # draw chip outline
-BOX, DETAIL BOX, 2075, 250, 375, 2910, , TOP,
+BOX, DETAIL BOX, 2075, 250, 375, 2550, , TOP,
 MESSAGE, 2125, 270, 100, Name, 48, LEFT, TOP
 TEXT, none, black, AVRxxDB48, NL
-MESSAGE, 2100, 3080, 40, Name, 32, LEFT, TOP
+MESSAGE, 2100, 2720, 40, Name, 32, LEFT, TOP
 TEXT, none, black, github.com/, NL
 TEXT, none, black, SpenceKonde/DxCore, NL
 TEXT, none, black, , NL
-MESSAGE, 1925, 3180, 40, Name, 36, LEFT, TOP
+MESSAGE, 1925, 2820, 40, Name, 36, LEFT, TOP
 TEXT, none, black,"Chip is square, shown as a breakout." , NL
-#MESSAGE, 50, 3220, 40, Name, 36, LEFT, TOP
+#MESSAGE, 50, 2860, 40, Name, 36, LEFT, TOP
 MESSAGE, 50, 2850, 48, Name, 48, LEFT, TOP
 TEXT, none, black, "The notation SDA.3 means Wire.swap(3). You must choose SDA.3 and SCL.3 or SDA.2 and SCL.2 together. Each peripheral can have only one swap ", NL
 TEXT, none, black, "position set. Signals are often suffixed by the peripheral number so RX1 is UART1 rx. In a few cases n,FN is used (2,OUT.1). The notation SDAs.3/SCLs.3", NL
@@ -82,7 +82,7 @@ TEXT, none, black, "is where the slave pins are in dual mode. Data from AVR64DB4
 
 
 #left pin name labels
-MESSAGE, 2100, 350, 120, Name, 48, LEFT, TOP
+MESSAGE, 2100, 350, 100, Name, 48, LEFT, TOP
 TEXT, none, black, 1 A5, NL
 TEXT, none, black, 2 A6, NL
 TEXT, none, black, 3 A7, NL
@@ -106,15 +106,17 @@ TEXT, none, black, 20 D0, NL
 TEXT, none, black, 21 D1, NL
 TEXT, none, black, 22 D2, NL
 TEXT, none, black, 23 D3, NL
+TEXT, none, black, 24 D4, NL
 
 
-MESSAGE, 2425, 350, 120, Name, 48, RIGHT, TOP
+MESSAGE, 2425, 350, 100, Name, 48, RIGHT, TOP
 TEXT, none, black, A4 48, NL
 TEXT, none, black, A3 47, NL
 TEXT, none, black, A2 46, NL
 TEXT, none, black, A1 45, NL
 TEXT, none, black, A0 44, NL
 TEXT, none, black, ⏚ 43, NL
+TEXT, none, black, + 42, NL
 TEXT, none, black, U 41, NL
 TEXT, none, black, F6 40, NL
 TEXT, none, black, F5 39, NL
@@ -132,13 +134,12 @@ TEXT, none, black, + 28, NL
 TEXT, none, black, D7 27, NL
 TEXT, none, black, D6 26, NL
 TEXT, none, black, D5 25, NL
-TEXT, none, black, D4 24, NL
 
 
 
 # Left Side Pins
 ANCHOR, 2045, 305
-PINSET, LEFT, PACKED, CENTER, CENTER, 120, 30, 45, 60, 10, 0
+PINSET, LEFT, PACKED, CENTER, CENTER, 100, 30, 45, 60, 10, 0
 PIN, DIGITAL , IO, ,PIN_PA5, , , , , , , RX0.1, MISO0, , "0,WO5", , WOB, , 
 PIN, DIGITAL , IO, ,PIN_PA6, , , , , , , XCK0.1, SCK0, , , , WOC, , "0,OUT.1"
 PIN, DIGITAL , IO, ,PIN_PA7, CLKOUT, , "0,OUT|1,OUT|2,OUT", , ZOUT0|ZOUT1|ZOUT2, , XDIR0.1, SS0, , , , WOD, EoA.1, 
@@ -162,16 +163,18 @@ PIN, DIGITAL , IO, ,PIN_PD0, , AIN0, "0,AINN1|1,AINN1|2,AINN1", , , , , , , "0,W
 PIN, DIGITAL , IO, ,PIN_PD1, , AIN1, , , ZIN0, OP0INP, , , , "0,WO1.3", , , , "2,IN1"
 PIN, DIGITAL , IO, ,PIN_PD2, , AIN2, "0,AINP0|1,AINP0|2,AINP0", , , OP0OUT, , , , "0,WO2.3", , , EoD, "2,IN2"
 PIN, DIGITAL , IO, ,PIN_PD3, , AIN3, "0,AINN0|1,AINP1", , , OP0INN, , , , "0,WO3.3", , , , "2,OUT"
+PIN, DIGITAL , IO, ,PIN_PD4, , AIN4, "1,AINP2|2,AINP1", , , OP1INP, , , , "0,WO4.3", , , , 
 
 # Right Side Pins
 ANCHOR, 2485, 305
-PINSET, RIGHT, PACKED, CENTER, CENTER, 120, 30, 45, 60, 10, 0
+PINSET, RIGHT, PACKED, CENTER, CENTER, 100, 30, 45, 60, 10, 0
 PIN, DIGITAL , IO, ,PIN_PA4, , , , , , , TX0.1, MOSI0, , "0,WO4", , WOA, , 
 PIN, DIGITAL , IO, ,PIN_PA3, Fm+, , , , , , XDIR0, , SCL0|SCL0.1, "0,WO3", "1,WO", , , "0,OUT"
 PIN, DIGITAL , IO, ,PIN_PA2, Fm+, , , , , , XCK0, , SDA0|SDA0.1, "0,WO2", "0,WO", , EoA, "0,IN2"
 PIN, DIGITAL , IO, ,PIN_PA1, XTALHF2, , , , , , RX0, , , "0,WO1", , , , "0,IN1"
 PIN, DIGITAL , IO, ,PIN_PA0, EXTCLK|XTALHF1, , , , , , TX0, , , "0,WO0", , , , "0,IN0"
 PINTEXT, POWER, IO, POWER , GND, PowerPin, Ground,
+PINTEXT, POWER, IO, POWER , VDD , PowerPin,"1.8V-5.5V"
 PIN, DIGITAL , IO, ,PIN_UPDI, UPDI, , , , , , , , , , , , , 
 PIN, DIGITAL , IO, ,PIN_PF6, RESET, , , , , , , , , , , , , 
 PIN, DIGITAL , IO, ,PIN_PF5, , AIN21, , , , , RX2.1, , , "0,WO5.5", "1,WO.1", , , 
@@ -189,11 +192,10 @@ PINTEXT, POWER, IO, POWER , AVDD , PowerPin,"1.8V-5.5V"
 PIN, DIGITAL , IO, ,PIN_PD7, VREFA, AIN7, "0,AINN2|1,AINN2|2,AINN0|2,AINN2", , , OP1INN, , , , , , , EoD.1, 
 PIN, DIGITAL , IO, ,PIN_PD6, , AIN6, "0,AINP3|1,AINP3|2,AINP3", DACo, , , , , , , , , , "2,OUT.1"
 PIN, DIGITAL , IO, ,PIN_PD5, , AIN5, "1,AINN0", , , OP1OUT, , , , "0,WO5.3", , , , 
-PIN, DIGITAL , IO, ,PIN_PD4, , AIN4, "1,AINP2|2,AINP1", , , OP1INP, , , , "0,WO4.3", , , , 
 
 # legend
 ANCHOR, 800, 10
-PINSET, RIGHT, PACKED, CENTER, CENTER, 120, 30, 45, 60, 10, 0
+PINSET, RIGHT, PACKED, CENTER, CENTER, 100, 30, 45, 60, 10, 0
 PIN, NONE , NONE, ,Name, Special, ADC, AC, DAC, ZCD, OPAMP, USART, SPI, TWI, TCA, TCB, TCD, EVSYS, CCL
-MESSAGE, 800, 60, 120, Name, 72, RIGHT, TOP
+MESSAGE, 800, 60, 100, Name, 72, RIGHT, TOP
 TEXT, none, black, Legend, NL
